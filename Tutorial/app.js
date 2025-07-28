@@ -48,24 +48,25 @@
 
 
 
-const Http = require('http')
-var server = Http.createServer((req,res)=>{
-    if(req.url === "/"){
-        res.end("wecome to our homepage");
-    }
-    if(req.url === '/about'){
-        res.end('there is nothing much about us');
-    }
-        res.end(
-            `<h1>Oops!</h1>
-            <p>this page isn't available right now</p>
-            <a href = "/">back home</a>
-            `
-        )
+// const Http = require('http')
+// var server = Http.createServer((req,res)=>{
+//     if(req.url === "/"){
+//         res.end("wecome to our homepage");
+//     }
+//     if(req.url === '/about'){
+//         res.end('there is nothing much about us');
+//     }
+//         res.end(
+//             `<h1>Oops!</h1>
+//             <p>this page isn't available right now</p>
+//             <a href = "/">back home</a>
+//             `
+//         )
+//         })
+
+// server.listen(8000)
+
     
     // res.write("just trying this out ooo, omo e make sense")
     // res.end();
-})
-
-server.listen(8000)
 
