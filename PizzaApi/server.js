@@ -16,6 +16,6 @@ res.send('Welcome to the Pizza API');
 mongoose.connect(process.env.MONG_URI)
 .then(() => {
     const port = process.env.PORT || 5000
-    app.listenerCount(PORT, ()=>console.log(`Server is running on port ${port}`));
+    app.listene(PORT, ()=>console.log(`Server is running on port ${port}`));
 })
 .catch(err => console.error(`DB connection error:`, err))
