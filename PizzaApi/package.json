@@ -2,15 +2,17 @@
   "name": "pizzaapi",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "starter.js",
   "scripts": {
-    "dev": "nodemon starter.js"
+    "dev": "nodemon starter.mongoose"
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
