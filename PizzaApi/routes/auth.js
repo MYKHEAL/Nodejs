@@ -1,11 +1,17 @@
 import express from 'express';
 import User from '../model/user.js';
-import bcrypt from 'bcrypt'; // ❌ Don't destructure 'compare'
+import bcrypt from 'bcrypt'; 
 import jwt from 'jsonwebtoken';
 
 const router = express.Router();
 
-// REGISTER
+router.get('/test', (req, res) => {
+    res.send('Auth route is working!');
+});
+
+
+
+
 router.post('/register', async (req, res) => {
     try {
         const { name, email, password } = req.body;
@@ -32,7 +38,9 @@ router.post('/register', async (req, res) => {
     }
 });
 
-// LOGIN
+
+
+
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
     try {
@@ -46,10 +54,10 @@ router.post('/login', async (req, res) => {
             return res.status(400).json({ message: 'Invalid email or password' });
         }
 
-        // ✅ FIX: use `user._id`, not `user_id` which doesn't exist
+    
         const token = jwt.sign(
             { id: user._id },
-            process.env.JWT_SECRET, // ❌ remove space in JWT_SECRET
+            process.env.JWT_SECRET, 
             { expiresIn: '5m' }
         );
 
